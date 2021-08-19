@@ -51,7 +51,7 @@ export default {
       this.likedJokes.push(joke);
       console.log(this.likedJokes);
 
-      // Saving into a local storage
+      // Saving in local storage
       localStorage.setItem("likedJokes", JSON.stringify(this.likedJokes));
     },
   },
