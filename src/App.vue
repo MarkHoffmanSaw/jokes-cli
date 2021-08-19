@@ -190,8 +190,8 @@ h3 {
   border: 1px solid #000000;
 }
 
-.list-item:hover {
-  background: #eee;
+.list-item.liked {
+  background-color: rgb(225, 184, 221);
 }
 
 .inputValue {

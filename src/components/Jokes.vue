@@ -1,8 +1,8 @@
 <template>
   <div v-for="(joke, i) in jokesArr">
-    <li class="list-item" style="{background-color: red}">
+    <li class="list-item">
       <span class="bold">{{ joke }}</span>
-      <Button class="danger" text="💙" @click="like(i)" />
+      <Button class="danger" text="💙" @click="like(joke, i, $event)" />
     </li>
   </div>
 </template>
@@ -19,10 +19,14 @@ export default {
   components: {
     Button,
   },
-
+  data() {
+    return { likedJokes: [] };
+  },
   setup() {
+    // An empty array for filling
     const jokesArr = ref([]);
 
+    // Getting jokes API
     (async function() {
       try {
         const getJokes = await fetch(
@@ -38,8 +42,17 @@ export default {
     return { jokesArr };
   },
   methods: {
-    like(i) {
-      console.log(i, "liked");
+    like(joke, i, e) {
+      // Like a joke
+      console.log(i, e.target, "liked");
+      e.target.closest(".list-item").classList.toggle("liked");
+
+      // Adding liked jokes in array
+      this.likedJokes.push(joke);
+      console.log(this.likedJokes);
+
+      // Saving into a local storage
+      localStorage.setItem("likedJokes", JSON.stringify(this.likedJokes));
     },
   },
 };
