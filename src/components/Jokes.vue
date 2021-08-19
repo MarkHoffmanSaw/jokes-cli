@@ -1,9 +1,12 @@
 <template>
-  <div v-for="(joke, i) in jokesArr">
-    <li class="list-item">
-      <span class="bold">{{ joke }}</span>
-      <Button class="danger" text="💙" @click="like(joke, i, $event)" />
-    </li>
+  <div>
+    <input class="inputValue" type="text" placeholder="Search by words..." />
+    <div v-for="(joke, i) in jokesArr">
+      <li class="list-item">
+        <span class="bold">{{ joke }}</span>
+        <Button class="danger" text="💙" @click="like(joke, i, $event)" />
+      </li>
+    </div>
   </div>
 </template>
 

@@ -1,7 +1,6 @@
 <template>
   <div class="container">
     <div class="card">
-      <input class="inputValue" type="text" placeholder="Search by words" />
       <Jokes />
     </div></div
 ></template>
