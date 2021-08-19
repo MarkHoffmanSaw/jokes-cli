@@ -37,10 +37,9 @@ hr {
 
 strong,
 .bold {
-  font-size: x-large;
   font-weight: 700;
   width: 1000px;
-  word-wrap: break-word;
+  padding: 0.3rem;
 }
 
 ol,
@@ -128,27 +127,9 @@ h3 {
   box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
 
-.btn.primary {
-  background: #42b983;
-  color: #fff;
-}
-
 .btn.danger {
-  background: #e53935;
   color: #fff;
-  border-color: #e53935;
-}
-
-.btn.warning {
-  background: #b56214;
-  color: #fff;
-  border-color: #b56214;
-}
-
-.btn.extra {
-  background: #188fd0;
-  color: #fff;
-  border-color: #188fd0;
+  border-color: #4f008f;
 }
 
 .container {
@@ -200,12 +181,13 @@ h3 {
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem 0;
-  border-radius: 99px;
+  border-radius: 10px;
   transition: 0.22s all;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: pre-line;
   overflow: hidden;
-  background-color: rgb(151, 247, 159);
+  background-color: rgb(227, 255, 161);
+  border: 1px solid #000000;
 }
 
 .list-item:hover {

@@ -1,8 +1,8 @@
 <template>
   <div v-for="(joke, i) in jokesArr">
-    <li class="list-item">
-      <span class="bold"> {{ joke }}</span>
-      <Button class="btn danger" text="Like 💙" />
+    <li class="list-item" style="{background-color: red}">
+      <span class="bold">{{ joke }}</span>
+      <Button class="danger" text="💙" @click="like(i)" />
     </li>
   </div>
 </template>
@@ -19,6 +19,7 @@ export default {
   components: {
     Button,
   },
+
   setup() {
     const jokesArr = ref([]);
 
@@ -35,6 +36,11 @@ export default {
       }
     })();
     return { jokesArr };
+  },
+  methods: {
+    like(i) {
+      console.log(i, "liked");
+    },
   },
 };
 </script>
