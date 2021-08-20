@@ -26,7 +26,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 16px;
-  color: #695cbb;
+  color: #08003f;
   background: #ffdc51;
 }
 
@@ -185,7 +185,7 @@ h3 {
   text-overflow: ellipsis;
   white-space: pre-line;
   overflow: hidden;
-  background-color: rgb(227, 255, 161);
+  background-color: beige;
   border: 1px solid #000000;
 }
 
