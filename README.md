@@ -1,19 +1,6 @@
-# jokes-cli
+# Simple jokes generator & search
 
-## Project setup
-```
-npm install
-```
+## Приложение генерирует 10 случайных анектодов на английском языке
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## В строке "Search by words..." введите текст в любом регистре и получите совпадение
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
