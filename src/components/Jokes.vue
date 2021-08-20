@@ -1,7 +1,12 @@
 <template>
   <div>
-    <input class="inputValue" type="text" placeholder="Search by words..." />
-    <div v-for="(joke, i) in jokesArr">
+    <input
+      v-model="search"
+      class="inputValue"
+      type="text"
+      placeholder="Search by words..."
+    />
+    <div v-for="(joke, i) in searchHandler">
       <li class="list-item">
         <span class="bold">{{ joke }}</span>
         <Button class="danger" text="💙" @click="like(joke, i, $event)" />
@@ -23,7 +28,7 @@ export default {
     Button,
   },
   data() {
-    return { likedJokes: [] };
+    return { likedJokes: [], search: "" };
   },
   setup() {
     // An empty array for filling
@@ -47,15 +52,20 @@ export default {
   methods: {
     like(joke, i, e) {
       // Like a joke
-      console.log(i, e.target, "liked");
       e.target.closest(".list-item").classList.toggle("liked");
 
       // Adding liked jokes in array
       this.likedJokes.push(joke);
-      console.log(this.likedJokes);
 
       // Saving in local storage
       localStorage.setItem("likedJokes", JSON.stringify(this.likedJokes));
+    },
+  },
+  computed: {
+    searchHandler() {
+      return this.jokesArr.filter((joke) => {
+        return joke.toLowerCase().match(this.search.toLowerCase());
+      });
     },
   },
 };
