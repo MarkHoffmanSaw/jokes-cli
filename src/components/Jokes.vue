@@ -63,6 +63,7 @@ export default {
   },
   computed: {
     searchHandler() {
+      // Search filter
       return this.jokesArr.filter((joke) => {
         return joke.toLowerCase().match(this.search.toLowerCase());
       });
