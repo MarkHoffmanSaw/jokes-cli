@@ -27,7 +27,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-size: 16px;
   color: #08003f;
-  background: #ffdc51;
+  background: linear-gradient(45deg, #eecfba, #c5dde8);
 }
 
 hr {
